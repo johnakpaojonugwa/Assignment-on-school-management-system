@@ -34,7 +34,7 @@ export const protect = async(req, res, next) => {
 
 export const authorize = (...allowedRoles) => {
     return (req, res, next) => {
-        if (!req.user || !allowedRoles.includes(req.userType)) {
+        if (!req.user || !allowedRoles.includes(req.userRole)) {
             return res.status(403).json({ success: false, message: `Access denied. This resource is restricted to: ${allowedRoles.join(", ")} only.`})
         }
         next();
