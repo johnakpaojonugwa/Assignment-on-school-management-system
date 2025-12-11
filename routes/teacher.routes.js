@@ -14,7 +14,7 @@ router.get('/', getAllTeachers);
 //Route to get single teacher
 router.get('/:teacherId', getSingleTeacher);
 //Route to update teacher details
-router.put('/:teacherId', protect, authorize('admin'), uploadMiddleware, updateTeacher);
+router.put('/:teacherId', uploadMiddleware, updateTeacher);
 //route to logout teacher
 router.post('/logout/:teacherId', logoutTeacher);
 //route to delete teacher
